@@ -1,16 +1,27 @@
+import Image from "next/image";
+
 import ThemeSwitcher from "./ThemeSwitcher";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <header className="navbar bg-primary text-primary-content">
       <div className="max-w-7xl mx-auto flex-1 flex gap-8">
-        <a href="/" className="btn btn-ghost normal-case text-xl">
+        <Link href="/" className="btn btn-ghost normal-case text-xl">
+          <Image src="/favicon.ico" width={40} height={40} alt="Logo" />
           Dota Dojo
-        </a>
+        </Link>
         <nav>
           <ul className="flex gap-4">
             <li>
-              <p>Teams</p>
+              <Link href="/heroes" className="link link-hover">
+                Heroes
+              </Link>
+            </li>
+            <li>
+              <Link href="/teams" className="link link-hover">
+                Teams
+              </Link>
             </li>
             <li>
               <p>Players</p>
